@@ -16,10 +16,15 @@ function App() {
           <Route path="/wiki" element={<Wiki />}></Route>
           <Route path="/shop" element={<Shop />}></Route>
           <Route path="/infos" element={<Infos />}></Route>
+          <Route path="/amalgame" element={<Redirect />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
+}
+
+function Redirect() {
+  window.location.href = '/'
 }
 
 export default App;
