@@ -1,3 +1,16 @@
 .infos-text {
     color: white;
+    padding: 3%;
+}
+
+.page-link {
+    color: red;
+
+    &:visited {
+        color: red;
+    }
+
+    &:active {
+        color: darkred;
+    }
 }
