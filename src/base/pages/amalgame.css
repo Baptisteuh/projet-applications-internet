@@ -17,6 +17,11 @@ body {
     text-align: center;
 }
 
+#fuseButtonIcon {
+    width: 60%;
+    text-align: center;
+}
+
 #containerAmalgameIcon {
     text-align: center;
 }
