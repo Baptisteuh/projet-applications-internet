@@ -5,6 +5,7 @@
 
 .page-link {
     color: red;
+    text-decoration:none;
 
     &:visited {
         color: red;
