@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { AppBar, Button, Toolbar, Typography } from '@mui/material'
 import appLogo1 from '../../assets/images/appLogo1.png';
+import './header.css'
 
 const pages = ['Amalgame', 'Wiki', 'Shop', 'Infos']
 
 class Header extends React.Component {
   render() {
     return  <div>
-              <AppBar position="static" color="default">
-                <Toolbar>
-                  <Typography variant="h1" color="inherit">
+                <Toolbar className='appbarbg'>
+                  <Typography variant="h1">
                     <img src={appLogo1} alt='appLogo'/>
                   </Typography>
 
@@ -17,13 +17,12 @@ class Header extends React.Component {
                       <Button
                         key={page}
                         onClick={()=> window.location.href = '/' + page.toLowerCase()}
-                        sx={{ my: 2, color: 'black', display: 'block' }}
+                        sx={{ my: 2, color: 'white', display: 'block', fontSize: 20}}
                       >
                         {page}
                       </Button>
                     ))} 
                 </Toolbar>
-              </AppBar>
             </div>
   }
 }
