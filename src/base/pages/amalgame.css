@@ -1,17 +1,15 @@
 html,
 body {
-    display: block;
-    margin: 0px;
-    background: url("../../assets/images/background1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     /*filter: blur(0.1em) brightness(60%);*/
-    
 }
 
 #contentPage {
     margin-top: 20px;
+}
+
+#fuseButtonId {
+    width: 6%;
+    text-align: center;
 }
 
 #amalgameIcon {
