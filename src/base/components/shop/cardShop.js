@@ -4,7 +4,7 @@ import './cardShop.css'
 export function equip(backgroundNumber) {
     const backgroundStorage = "background" + backgroundNumber;
     let i = 1;
-    for (i; i < 11; i++) {
+    for (i; i <= 11; i++) {
         if (localStorage.getItem("background" + i) == 'equip') {
             localStorage.setItem("background" + i, 'buy');
         }

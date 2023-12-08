@@ -11,9 +11,13 @@ function App() {
     localStorage.setItem('background1', 'equip');
   }
   let i = 1;
-  for (i; i < 11; i++) {
+  for (i; i <= 11; i++) {
     if (localStorage.getItem("background" + i) == 'equip') {
-      document.body.style.backgroundImage = `url(${require(`./assets/images/background${i}.png`)})`;
+      if (i != 1) {
+        document.body.style.background = `linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(${require(`./assets/images/background${i}.png`)})`;
+      } else {
+        document.body.style.background = `url(${require(`./assets/images/background${i}.png`)})`;
+      }
     }
 }
   
