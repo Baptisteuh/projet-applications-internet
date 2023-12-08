@@ -1,0 +1,27 @@
+html,
+body {
+    /*filter: blur(0.1em) brightness(60%);*/
+}
+
+#contentPage {
+    margin-top: 20px;
+}
+
+#fuseButtonId {
+    width: 6%;
+    text-align: center;
+}
+
+#amalgameIcon {
+    width: 50%;
+    text-align: center;
+}
+
+#fuseButtonIcon {
+    width: 60%;
+    text-align: center;
+}
+
+#containerAmalgameIcon {
+    text-align: center;
+}

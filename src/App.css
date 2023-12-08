@@ -3,6 +3,6 @@ body {
     margin: 0px;
     background: url("./assets/images/background1.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat:space;
     background-attachment: fixed;
 }
