@@ -1,0 +1,14 @@
+.background {
+width: 100%;
+}
+
+#textCardShop {
+    margin-left: 5px;
+    display: inline-block;
+}
+
+#buyButton {
+    text-align: right;
+    margin-right: 10px;
+    margin-top: -40px;
+}

@@ -7,6 +7,16 @@ import Shop from './base/pages/shop';
 import Infos from './base/pages/infos';
 
 function App() {
+  if (localStorage.getItem('background1') === null) {
+    localStorage.setItem('background1', 'equip');
+  }
+  let i = 1;
+  for (i; i < 11; i++) {
+    if (localStorage.getItem("background" + i) == 'equip') {
+      document.body.style.backgroundImage = `url(${require(`./assets/images/background${i}.png`)})`;
+    }
+}
+  
   return (
     <div className="wrapper">
       <Header />

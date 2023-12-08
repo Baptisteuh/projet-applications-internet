@@ -1,7 +1,6 @@
 body {
     display: block;
     margin: 0px;
-    background: url("./assets/images/background1.png");
     background-size: cover;
     background-repeat:space;
     background-attachment: fixed;
