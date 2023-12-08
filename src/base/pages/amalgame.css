@@ -1,0 +1,24 @@
+html,
+body {
+    display: block;
+    margin: 0px;
+    background: url("../../assets/images/background1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*filter: blur(0.1em) brightness(60%);*/
+    
+}
+
+#contentPage {
+    margin-top: 20px;
+}
+
+#amalgameIcon {
+    width: 50%;
+    text-align: center;
+}
+
+#containerAmalgameIcon {
+    text-align: center;
+}
