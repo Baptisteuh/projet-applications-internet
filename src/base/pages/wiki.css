@@ -3,3 +3,7 @@
     background: linear-gradient(0.25turn, rgba(56, 23, 15, 1), rgba(74, 42, 18, .8));
     color: white !important;
 }
+
+.item-img {
+    width: 50%;
+}

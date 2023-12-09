@@ -21,21 +21,19 @@ export default function Wiki() {
     }, []);
 
     useEffect(() => {
-        const loadImages = async () => {
-          const imageModules = await Promise.all(
-            items.map(async (item) => {
-              if (item && item.img) {
-                const imageModule = await import(`../../assets/images/items/${item.img}`);
-                return imageModule.default;
-              }
-              return null;
-            })
-          );
-    
-          setImageSrcs(imageModules);
-        };
-    
-        loadImages();
+      const loadImages = async () => {
+        const imageObject = {};
+        await Promise.all(
+          items.map(async (item) => {
+            if (item && item.img) {
+              const imageModule = await import(`../../assets/images/items/${item.img}`);
+              imageObject[item.id] = imageModule.default;
+            }
+          })
+        );
+        setImageSrcs(imageObject);
+      };
+      loadImages();
     }, [items]);
 
     return <Grid container>
@@ -43,17 +41,17 @@ export default function Wiki() {
                     <List>
                         <ListItem>
                         <ListItemButton className='category-button'>
-                            <ListItemText primary={'Swords'} />
+                            <ListItemText primary={'One-handed swords'} />
+                        </ListItemButton>
+                        </ListItem>
+                        <ListItem>
+                        <ListItemButton className='category-button'>
+                            <ListItemText primary={'Two-handed swords'} />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
                         <ListItemButton className='category-button'>
                             <ListItemText primary={'Bows'} />
-                        </ListItemButton>
-                        </ListItem>
-                        <ListItem>
-                        <ListItemButton className='category-button'>
-                            <ListItemText primary={'Shields'} />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
@@ -89,7 +87,7 @@ export default function Wiki() {
                             color={'white'}
                             onClick={() => window.location.href += '/' + item.id}
                         >
-                            <img src={imageSrcs[item.id-1]} alt={item.name} className=''/>
+                            <img src={imageSrcs[item.id]} alt={item.name} className='item-img'/>
                             {item.name}
                         </Box>
                     ))}
