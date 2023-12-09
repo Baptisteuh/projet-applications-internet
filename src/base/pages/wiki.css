@@ -5,5 +5,14 @@
 }
 
 .item-img {
+    margin-left:10px;
     width: 50%;
+}
+
+.itemName {
+    margin-right:15px;
+}
+
+.typeWeaponIcon {
+    width: 2em;
 }
