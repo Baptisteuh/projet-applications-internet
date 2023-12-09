@@ -20,6 +20,10 @@ function App() {
         document.body.style.background = `url(${require(`./assets/images/background${i}.png`)})`;
       }
     }
+
+  if (localStorage.getItem('rupeeBalance') === null) {
+    localStorage.setItem('rupeeBalance', 200);
+  }
 }
   
   return (
