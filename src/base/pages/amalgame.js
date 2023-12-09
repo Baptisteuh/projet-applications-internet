@@ -24,6 +24,12 @@ export default function Amalgame() {
     };
 
     const fuse = () => {
+        if (selectedItemId === "") {
+            setSelectedItemId(1);
+        }
+        if (selectedItemId2 === "") {
+            setSelectedItemId2(1);
+        }
         setFusedItem("fuse");
     }
 

@@ -5,7 +5,6 @@ import './header.css';
 import { useNavigate } from 'react-router-dom';
 
 const pages = ['Amalgame', 'Wiki', 'Shop', 'Infos']
-console.log(window.location.pathname)
 
 export default function Header() {
   const navigate = useNavigate();
