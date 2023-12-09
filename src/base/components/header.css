@@ -1,3 +1,9 @@
 .appbarbg {
     background: linear-gradient(0.25turn, rgba(56, 23, 15, 1), rgba(74, 42, 18, 0));
 }
+
+.sticky-appbar {
+    z-index: 1000;
+    top: 0;
+    position: sticky;
+}
