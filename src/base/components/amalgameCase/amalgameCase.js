@@ -7,9 +7,9 @@ import './amalgameCase.css'
 class AmalgameCase extends React.Component {
   render() {
     return  <div class="image-container" id="container">
-    <img src={background} />
-    {this.props.idItem == "2" ? <img class="itemCase" src={testSword1} />:<div></div>}
-    {this.props.idItem == "1" ? <img class="itemCase" src={testSword2} />:<div></div>}
+    <img src={background} alt="Case" />
+    {this.props.idItem === "2" ? <img class="itemCase" src={testSword1} alt="Weapon" />:<div></div>}
+    {this.props.idItem === "1" ? <img class="itemCase" src={testSword2} alt="Item" />:<div></div>}
             </div>
   }
 }
