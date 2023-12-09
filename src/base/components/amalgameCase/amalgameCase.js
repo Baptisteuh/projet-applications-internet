@@ -1,17 +1,48 @@
-import * as React from 'react';
-import background from "../../../assets/images/fuseItemBackground.png"
-import testSword1 from "../../../assets/images/items/boulder-breaker-weapon-zelda-totk-wiki-guide.png"
-import testSword2 from "../../../assets/images/items/bomb_flower_materials_zelda_tears_of_the_kingdom_wiki_guide_200px.png"
-import './amalgameCase.css'
+import React, { useEffect, useState } from 'react';
+import background from "../../../assets/images/fuseItemBackground.png";
+import './amalgameCase.css';
 
-class AmalgameCase extends React.Component {
-  render() {
-    return  <div class="image-container" id="container">
-    <img src={background} alt="Case" />
-    {this.props.idItem === "2" ? <img class="itemCase" src={testSword1} alt="Weapon" />:<div></div>}
-    {this.props.idItem === "1" ? <img class="itemCase" src={testSword2} alt="Item" />:<div></div>}
-            </div>
-  }
+export default function AmalgameCase({ position, itemId }) {
+  const [imageSrcs, setImageSrcs] = useState([]);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/api');
+        const data = await response.json();
+        setItems(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const imageObject = {};
+      await Promise.all(
+        items.map(async (item) => {
+          if (item && item.img) {
+            const imageModule = await import(`../../../assets/images/items/${item.img}`);
+            imageObject[item.id] = imageModule.default;
+          }
+        })
+      );
+      setImageSrcs(imageObject);
+    };
+
+    loadImages();
+  }, [items]);
+
+  return (
+    <div className="image-container" id="container">
+      <img src={background} alt="Case"/>
+      {imageSrcs[itemId] ? 
+        <img className="itemCase" src={imageSrcs[itemId]} alt="Item"/>
+       : <img className="itemCase" src={imageSrcs[1]} alt="Item"/>}
+    </div>
+  );
 }
-
-export default AmalgameCase

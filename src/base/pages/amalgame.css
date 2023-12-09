@@ -3,6 +3,10 @@ body {
     /*filter: blur(0.1em) brightness(60%);*/
 }
 
+.fuseButton {
+    cursor: pointer;
+}
+
 #contentPage {
     margin-top: 20px;
 }

@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import itemBackground from "../../assets/images/fuseItemBackground.png";
 
 export default function Wiki() {
-    const [items, setItems] = React.useState([]);
+    const [items, setItems] = useState([]);
     const [imageSrcs, setImageSrcs] = useState([]);
 
     useEffect(() => {
