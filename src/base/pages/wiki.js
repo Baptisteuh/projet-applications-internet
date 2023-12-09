@@ -3,6 +3,9 @@ import './wiki.css';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import itemBackground from "../../assets/images/fuseItemBackground.png";
+import oneHand from "../../assets/images/oneHand.png";
+import twoHand from "../../assets/images/twoHand.png";
+import spear from "../../assets/images/spear.png";
 
 export default function Wiki() {
     const [items, setItems] = React.useState([]);
@@ -42,11 +45,19 @@ export default function Wiki() {
                         <ListItem>
                         <ListItemButton className='category-button'>
                             <ListItemText primary={'One-handed swords'} />
+                            <img src={oneHand} class="typeWeaponIcon" />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
                         <ListItemButton className='category-button'>
                             <ListItemText primary={'Two-handed swords'} />
+                            <img src={twoHand} class="typeWeaponIcon" />
+                        </ListItemButton>
+                        </ListItem>
+                        <ListItem>
+                        <ListItemButton className='category-button'>
+                            <ListItemText primary={'Spear'} />
+                            <img src={spear} class="typeWeaponIcon" />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>

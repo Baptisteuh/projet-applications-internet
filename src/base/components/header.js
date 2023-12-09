@@ -4,7 +4,8 @@ import appLogo1 from '../../assets/images/appLogo1.png';
 import './header.css';
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['Amalgame', 'Wiki', 'Shop', 'Infos'];
+const pages = ['Amalgame', 'Wiki', 'Shop', 'Infos']
+console.log(window.location.pathname)
 
 export default function Header() {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ export default function Header() {
               key={page}
               onClick={() => handleClick(page.toLowerCase())}
               sx={{ my: 2, color: 'white', display: 'block', fontSize: 20 }}
+                        id={(window.location.pathname.replace('/', '') === page.toLowerCase()) || (window.location.pathname === '/' && page.toLowerCase()) === 'amalgame' ? 'current-page' : ''}
             >
               {page}
             </Button>

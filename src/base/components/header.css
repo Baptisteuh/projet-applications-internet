@@ -7,3 +7,10 @@
     top: 0;
     position: sticky;
 }
+
+#current-page {
+    border: 10px solid transparent!important;
+    border-image: url('../../assets/images/swordSelection.png')!important;
+    border-image-slice: 50!important;
+    border-image-width: 50px !important
+}
