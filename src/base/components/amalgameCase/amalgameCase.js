@@ -9,7 +9,7 @@ export default function AmalgameCase({ position, itemId }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api');
+        const response = await fetch('http://zeldam.smash-house.fr:3000/api');
         const data = await response.json();
         setItems(data);
       } catch (error) {

@@ -7,7 +7,7 @@ export default function AmalgameItemCase(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api');
+        const response = await axios.get('http://zeldam.smash-house.fr:3000/api');
         const data = response.data.reduce((acc, item) => {
           acc[item.id] = item;
           return acc;

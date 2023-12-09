@@ -9,7 +9,7 @@ function AmalgameFilter(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api');
+        const response = await axios.get('http://zeldam.smash-house.fr:3000/api');
         setItems(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
