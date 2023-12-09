@@ -15,7 +15,15 @@ export function equip(backgroundNumber) {
 
 export function buy(backgroundNumber) {
     const backgroundStorage = "background" + backgroundNumber;
-    localStorage.setItem(backgroundStorage, "buy");
+    const currentRupeeBalance = localStorage.getItem("rupeeBalance");
+    const backgroundPrice = 50;
+    if (localStorage.getItem("rupeeBalance") >= backgroundPrice) {
+        localStorage.setItem('rupeeBalance',currentRupeeBalance - backgroundPrice);
+        localStorage.setItem(backgroundStorage, "buy");
+    }
+    else{
+        alert("Not enough rupees");      
+    }
     window.location.reload();
 }
 
