@@ -1,7 +1,7 @@
 body {
     display: block;
     margin: 0px;
-    background-size: 100vw auto!important;
+    background-size: cover!important;
     background-repeat:space!important;
     background-attachment: fixed!important;
 }

@@ -1,13 +1,14 @@
 import { Box, Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import './wiki.css';
 import axios from 'axios';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import itemBackground from "../../assets/images/fuseItemBackground.png";
 
 export default function Wiki() {
     const [items, setItems] = React.useState([]);
+    const [imageSrcs, setImageSrcs] = useState([]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get('http://localhost:3000/api');
@@ -18,6 +19,24 @@ export default function Wiki() {
         };
         fetchData();
     }, []);
+
+    useEffect(() => {
+        const loadImages = async () => {
+          const imageModules = await Promise.all(
+            items.map(async (item) => {
+              if (item && item.img) {
+                const imageModule = await import(`../../assets/images/items/${item.img}`);
+                return imageModule.default;
+              }
+              return null;
+            })
+          );
+    
+          setImageSrcs(imageModules);
+        };
+    
+        loadImages();
+    }, [items]);
 
     return <Grid container>
                 <Grid item xs={2}>
@@ -70,6 +89,7 @@ export default function Wiki() {
                             color={'white'}
                             onClick={() => window.location.href += '/' + item.id}
                         >
+                            <img src={imageSrcs[item.id-1]} alt={item.name} className=''/>
                             {item.name}
                         </Box>
                     ))}
