@@ -13,7 +13,7 @@ export default function Header() {
     navigate("/" + page.replace("amalgame",""));
   }
 
-    return  (<div>
+    return  (<div className='sticky-appbar'>
                 <Toolbar className='appbarbg'>
                   <Typography variant="h1">
                     <img src={appLogo1} alt='appLogo'/>

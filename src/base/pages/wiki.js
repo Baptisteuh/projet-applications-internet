@@ -1,27 +1,44 @@
 import { Box, Grid, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import './wiki.css';
+import axios from 'axios';
+import React from 'react';
+import itemBackground from "../../assets/images/fuseItemBackground.png";
 
 export default function Wiki() {
+    const [items, setItems] = React.useState([]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/api');
+                setItems(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchData();
+    }, []);
 
     return <Grid container>
                 <Grid item xs={2}>
                     <List>
                         <ListItem>
-                        <ListItemButton>
+                        <ListItemButton className='category-button'>
                             <ListItemText primary={'Swords'} />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
-                        <ListItemButton>
+                        <ListItemButton className='category-button'>
                             <ListItemText primary={'Bows'} />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
-                        <ListItemButton>
+                        <ListItemButton className='category-button'>
                             <ListItemText primary={'Shields'} />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
-                        <ListItemButton>
+                        <ListItemButton className='category-button'>
                             <ListItemText primary={'Items'} />
                         </ListItemButton>
                         </ListItem>
@@ -33,34 +50,27 @@ export default function Wiki() {
                         display: 'flex',
                         flexDirection: 'row',
                         flexWrap: 'wrap',
-                        backgroundImage: `url(${"../../assets/images/background1.png"})`
                     }}
                 >
-                    {['a', 'b', 'c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'].map((text) => (
+                    {items.map((item) => (
                         <Box
                             sx={{
                                 width: 200,
                                 height: 200,
-                                backgroundColor: 'primary.dark',
-                                '&:hover': {
-                                    backgroundColor: 'primary.main',
-                                    opacity: [0.9, 0.8, 0.7],
-                                },
-                                '&:active': {
-                                    backgroundColor: 'primary.main',
-                                    opacity: [1, 1, 1],
-                                },
+                                backgroundImage: `url(${itemBackground})`,
+                                backgroundSize: "cover",
                                 margin: '1%',
-                                borderRadius: '25px',
-                                userSelect: 'none'
+                                userSelect: 'none',
+                                cursor: 'pointer',
+                                textAlign: 'center'
                             }}
                             justifyContent="center"
                             alignItems="center"
                             display="flex"
                             color={'white'}
-                            onClick={() => window.location.href += '/' + text}
+                            onClick={() => window.location.href += '/' + item.id}
                         >
-                            {text}
+                            {item.name}
                         </Box>
                     ))}
                 </Grid>

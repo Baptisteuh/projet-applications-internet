@@ -5,6 +5,7 @@ import Amalgame from './base/pages/amalgame';
 import Wiki from './base/pages/wiki';
 import Shop from './base/pages/shop';
 import Infos from './base/pages/infos';
+import WikiItem from './base/pages/wikiitem';
 
 function App() {
   if (localStorage.getItem('background1') === null) {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/wiki" element={<Wiki />}></Route>
           <Route path="/shop" element={<Shop />}></Route>
           <Route path="/infos" element={<Infos />}></Route>
+          <Route path="/wiki/:id" element={<WikiItem />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
