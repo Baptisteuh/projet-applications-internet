@@ -89,14 +89,14 @@ function AmalgameFilter(props) {
         </select>
       )}
       <fieldset>
-        <legend>Filtres armes:</legend>
+        <legend>Item fused filter :</legend>
 
         <FormGroup>
-          <FormControlLabel control={<Checkbox defaultChecked name="oneHand" onChange={handleFilterSelectionItem} />} label="Epee à 1 main" />
-          <FormControlLabel control={<Checkbox defaultChecked name="twoHand" onChange={handleFilterSelectionItem} />} label="Epee à 2 main" />
-          <FormControlLabel control={<Checkbox defaultChecked name="spear" onChange={handleFilterSelectionItem} />} label="Lance" />
+          <FormControlLabel control={<Checkbox defaultChecked name="oneHand" onChange={handleFilterSelectionItem} />} label="One handed weapon" />
+          <FormControlLabel control={<Checkbox defaultChecked name="twoHand" onChange={handleFilterSelectionItem} />} label="Two handed weapon" />
+          <FormControlLabel control={<Checkbox defaultChecked name="spear" onChange={handleFilterSelectionItem} />} label="Spear" />
           {props.isSecondItem === "true" ?
-            <FormControlLabel control={<Checkbox defaultChecked name="item" onChange={handleFilterSelectionItem} />} label="Objet" /> : <></>
+            <FormControlLabel control={<Checkbox defaultChecked name="item" onChange={handleFilterSelectionItem} />} label="Item" /> : <></>
           }
 
         </FormGroup>
