@@ -25,16 +25,16 @@ export default function AmalgameItemCase(props) {
       <fieldset>
         <legend>Amalgame:</legend>
 
-        <h3>Statistiques de l'arme :</h3>
+        <h3>Item statitics :</h3>
         {Object.keys(items).length > 0 && (
           <div>
             <p>
-              <strong>Dégâts :</strong>{' '}
+              <strong>Damage :</strong>{' '}
               {Number(items[props.idItem].statistics) +
                 Number(items[props.idItem2].statistics)}
             </p>
             <p>
-              <strong>Durabilité :</strong>{' '}
+              <strong>Durability :</strong>{' '}
               {Number(items[props.idItem].durability) +
                 Number(items[props.idItem2].durability)}
             </p>
