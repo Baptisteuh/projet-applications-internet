@@ -1,3 +1,4 @@
+
 # Site Zeldam : Tears of the Kingdom
 
 Bienvenue dans le README du site Zeldam dédié à Zelda: Tears of the Kingdom. Ce projet, développé en React, a pour objectif de fournir aux fans une plateforme interactive pour explorer, créer et personnaliser leur expérience dans l'univers captivant de ce jeu.
@@ -6,6 +7,12 @@ Bienvenue dans le README du site Zeldam dédié à Zelda: Tears of the Kingdom. 
 Baptiste Touchais
 Mehdi Boudjema
 Enzo Furriel
+
+## Vidéo de présentation
+
+
+[![Lien vers la vidéo de présentation](https://zupimages.net/up/23/49/7udc.png)](https://www.youtube.com/watch?v=TBhnyoS4I7M)
+
 
 ## Aperçu
 
@@ -19,7 +26,7 @@ L'onglet "Amalgame" permet aux joueurs de visualiser la fusion de deux armes du 
 
 ### Wiki
 
-Consultez le wiki pour explorer une base de données complète des différents items dans Zelda: Tears of the Kingdom. Obtenez des informations détaillées sur chaque arme, objet et personnage du jeu.
+Consultez le wiki pour explorer une base de données complète des différents items dans Zelda: Tears of the Kingdom. Obtenez des informations détaillées sur chaque arme et objet du jeu.
 
 ### Boutique
 
