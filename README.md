@@ -65,8 +65,8 @@ https://zeldam.smash-house.fr/
 4. Lancer le script pour lancer l'application :
    ```bash
    cd ..
-   start-windows.sh   (Windows)
-   start-linux.sh 	   (Linux)
+   ./start-windows.bat   (Windows)
+   ./start-linux.sh 	   (Linux)
 
 ## Collaboration
 
