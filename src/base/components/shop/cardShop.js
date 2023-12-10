@@ -42,12 +42,12 @@ export default function cardShop(props) {
         backgroundColor: '#38170F',
         color:'white',
     }}>
-        <div id="textCardShop">Nom : {props.name}<br/>Prix : {props.price}</div>
+        <div id="textCardShop">Name : {props.name}<br/>Price : {props.price}</div>
         {localStorage.getItem("background" + props.number) == "equip"?
-            <div id="buyButton"><Button color="success" variant="contained" >Equipé</Button></div>:
+            <div id="buyButton"><Button color="success" variant="contained" >Used</Button></div>:
             localStorage.getItem("background" + props.number) == "buy"?
-            <div id="buyButton"><Button color="info" variant="contained" onClick={() => equip(props.number)}>Equiper</Button></div>:
-            <div id="buyButton"><Button color="error" variant="contained" onClick={() => buy(props.number)}>Acheter</Button></div>
+            <div id="buyButton"><Button color="info" variant="contained" onClick={() => equip(props.number)}>Equip</Button></div>:
+            <div id="buyButton"><Button color="error" variant="contained" onClick={() => buy(props.number)}>Buy</Button></div>
         }
         </Box>
 </Box>

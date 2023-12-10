@@ -6,6 +6,7 @@ import itemBackground from "../../assets/images/fuseItemBackground.png";
 import oneHand from "../../assets/images/oneHand.png";
 import twoHand from "../../assets/images/twoHand.png";
 import spear from "../../assets/images/spear.png";
+import item from "../../assets/images/item.png";
 
 export default function Wiki() {
     const [items, setItems] = useState([]);
@@ -83,6 +84,7 @@ export default function Wiki() {
                         <ListItem>
                         <ListItemButton onClick={() => (setItemButton(!itemButton))} className={itemButton ? 'category-button': 'category-button-disable'}>
                             <ListItemText primary={'Items'} />
+                            <img src={item} class="typeWeaponIcon" />
                         </ListItemButton>
                         </ListItem>
                     </List>

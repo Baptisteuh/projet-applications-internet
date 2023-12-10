@@ -1,41 +1,43 @@
 import * as React from 'react';
-import './infos.css'
+import './infos.css';
 
 export default function Infos() {
 
-    return (<div className='infos-text'>
-        <section>
-            <h1>Bienvenue sur notre site de création d'amalgame de Zelda: Tears of the Kingdom : Zeldam!</h1>
-            <p>Nous sommes ravis de vous accueillir dans l'univers fascinant de ce jeu, et nous espérons que notre site rendra votre expérience encore plus enrichissante.</p>
-        </section>
-        <section>
-            <h2>Fonctionnalités du site :</h2>
+    return (
+        <div className='infos-text'>
+            <section>
+                <h1>Welcome to our Zelda: Tears of the Kingdom Amalgae Creation Site - Zeldam !</h1>
+                <p>We are thrilled to welcome you to the fascinating universe of this game, and we hope our site will make your experience even more enriching.</p>
+            </section>
+            <section>
+                <h2>Site Features :</h2>
 
-            <ul>
+                <ul>
 
-            <li><h3>Amalgame :</h3></li>
-            <p>L'onglet <a href='/' className='page-link'>Amalgame</a> vous permet de visualiser la fusion de deux armes de Zelda: Tears of the Kingdom. Créez des combinaisons uniques et découvrez les synergies entre différentes armes pour maximiser votre connaissance du jeu.</p>
+                    <li><h3>Amalgame :</h3></li>
+                    <p>The <a href='/' className='page-link'>Amalgame</a> tab allows you to visualize the fusion of two weapons from Zelda: Tears of the Kingdom. Create unique combinations and discover synergies between different weapons to maximize your knowledge of the game.</p>
 
-            <li><h3>Wiki :</h3></li>
-            <p>Consultez l'onglet <a href='/wiki' className='page-link'>Wiki</a> pour explorer une base de données complète des différents items présents dans Zelda: Tears of the Kingdom.</p>
+                    <li><h3>Wiki :</h3></li>
+                    <p>Visit the <a href='/wiki' className='page-link'>Wiki</a> tab to explore a comprehensive database of various items in Zelda: Tears of the Kingdom.</p>
 
-            <li><h3>Shop :</h3></li>
-            <p>Dans l'onglet <a href='/shop' className='page-link'>Shop</a>, personnalisez votre expérience en achetant des thèmes uniques pour le site. Accumulez des points en créant des amalgames, débloquez de nouveaux items dans le Wiki et utilisez ces points pour acquérir des thèmes qui correspondent à votre style.</p>
-        
-            </ul>
-        </section>
+                    <li><h3>Shop :</h3></li>
+                    <p>In the <a href='/shop' className='page-link'>Shop</a> tab, personalize your experience by purchasing unique themes for the site. Earn rubies by creating amalgams, unlock new items in the Wiki, and use these points to acquire themes that match your style.</p>
 
-        <section>
-            <h2>Système de Points :</h2>
-            <p>Gagnez des points en créant des amalgames. Ces points peuvent être utilisés dans le Shop pour acheter des thèmes exclusifs. De plus, la création d'amalgames débloque de nouveaux items dans le Wiki, encourageant ainsi l'exploration et la participation active sur le site.</p>
-        </section>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Crédits :</h2>
-            <p>Ce projet a été réalisé dans le cadre du module "Applications web et mobiles" par Mehdi Boudjema, Enzo Furriel et Baptiste Touchais. Leur passion et leur dévouement ont permis la création de ce site pour la communauté de Zelda: Tears of the Kingdom.</p>
-            <p>Nous tenons à exprimer notre gratitude envers la communauté qui soutient ce projet. Votre enthousiasme et votre engagement font de cette plateforme un lieu dynamique et interactif pour les fans du jeu.</p>
-            <p>Explorez, créez, et profitez pleinement de votre aventure sur le site de Zelda: Tears of the Kingdom!</p>
-            <p>Cordialement, L'équipe de développement</p>
-        </section>
-        </div>)
+            <section>
+                <h2>Rupees System :</h2>
+                <p>Earn 30 rupees with each amalgame creation. These rubies can be used in the Shop to purchase exclusive themes. Additionally, creating amalgams unlocks new items in the Wiki, encouraging exploration and active participation on the site.</p>
+            </section>
+
+            <section>
+                <h2>Credits :</h2>
+                <p>This project was carried out as part of the "Web and Mobile Applications" module by Mehdi Boudjema, Enzo Furriel, and Baptiste Touchais. Their passion and dedication enabled the creation of this site for the Zelda: Tears of the Kingdom community.</p>
+                <p>We would like to express our gratitude to the community supporting this project. Your enthusiasm and commitment make this platform a dynamic and interactive space for fans of the game.</p>
+                <p>Explore, create, and fully enjoy your adventure on the Zelda: Tears of the Kingdom site!</p>
+                <p>Best regards, The development team</p>
+            </section>
+        </div>
+    );
 }
