@@ -22,7 +22,7 @@ function App() {
     }
 
   if (localStorage.getItem('rupeeBalance') === null) {
-    localStorage.setItem('rupeeBalance', 200);
+    localStorage.setItem('rupeeBalance', 100);
   }
 }
   

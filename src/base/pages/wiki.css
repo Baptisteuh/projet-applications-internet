@@ -1,7 +1,12 @@
-.category-button {
+.category-button, .category-button-disable {
     border-radius: 15px !important;
     background: linear-gradient(0.25turn, rgba(56, 23, 15, 1), rgba(74, 42, 18, .8));
     color: white !important;
+}
+
+.category-button-disable {
+    color: gray!important;
+    background: linear-gradient(0.25turn, rgb(33, 9, 9), rgba(18, 12, 5, 0.8));
 }
 
 .item-img {
