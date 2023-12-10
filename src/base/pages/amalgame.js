@@ -28,7 +28,9 @@ export default function Amalgame() {
 
     const handleFilterChange = (list) => {
         if (list.length !== 0) {
-            setFuseButton(true);
+            if (selectedItemId2 !== 0) {
+                setFuseButton(true);
+            }
             const containsItem = list.some(item => item.id === parseInt(selectedItemId));
             if (!containsItem) {
                 setFusedItem(undefined);
@@ -45,7 +47,9 @@ export default function Amalgame() {
 
     const handleFilterChange2 = (list) => {
         if (list.length !== 0) {
-            setFuseButton(true);
+            if (selectedItemId !== 0) {
+                setFuseButton(true);
+            }
             const containsItem = list.some(item => item.id === parseInt(selectedItemId2));
             if (!containsItem) {
                 setFusedItem(undefined);
