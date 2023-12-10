@@ -3,7 +3,7 @@
 
 Bienvenue dans le README du site Zeldam dédié à Zelda: Tears of the Kingdom. Ce projet, développé en React, a pour objectif de fournir aux fans une plateforme interactive pour explorer, créer et personnaliser leur expérience dans l'univers captivant de ce jeu.
 
-## Membres de l'quipe
+## Membres de l'équipe
 Baptiste Touchais
 Mehdi Boudjema
 Enzo Furriel
