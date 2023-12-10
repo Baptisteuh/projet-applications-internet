@@ -66,25 +66,25 @@ export default function Wiki() {
                         <ListItem>
                         <ListItemButton onClick={() => (setOneHandedButton(!oneHandedButton))} className={oneHandedButton ? 'category-button': 'category-button-disable'}>
                             <ListItemText primary={'One-handed swords'} />
-                            <img src={oneHand} class="typeWeaponIcon" />
+                            <img src={oneHand} className='typeWeaponIcon' />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
                         <ListItemButton onClick={() => (setTwoHandedButton(!twoHandedButton))} className={twoHandedButton ? 'category-button': 'category-button-disable'}>
                             <ListItemText primary={'Two-handed swords'} />
-                            <img src={twoHand} class="typeWeaponIcon" />
+                            <img src={twoHand} className='typeWeaponIcon' />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
                         <ListItemButton onClick={() => (setSpearButton(!spearButton))} className={spearButton ? 'category-button': 'category-button-disable'}>
                             <ListItemText primary={'Spear'} />
-                            <img src={spear} class="typeWeaponIcon" />
+                            <img src={spear} className='typeWeaponIcon' />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
                         <ListItemButton onClick={() => (setItemButton(!itemButton))} className={itemButton ? 'category-button': 'category-button-disable'}>
                             <ListItemText primary={'Items'} />
-                            <img src={item} class="typeWeaponIcon" />
+                            <img src={item} className='typeWeaponIcon' />
                         </ListItemButton>
                         </ListItem>
                     </List>
