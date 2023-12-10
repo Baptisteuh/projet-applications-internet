@@ -39,10 +39,15 @@ export default function AmalgameCase({ position, itemId }) {
 
   return (
     <div className="image-container" id="container">
-      <img src={background} alt="Case"/>
-      {imageSrcs[itemId] ? 
-        <img className="itemCase" src={imageSrcs[itemId]} alt="Item"/>
-       : <img className="itemCase" src={imageSrcs[1]} alt="Item"/>}
+      <img src={background} alt="Case" />
+      {itemId !== 0 ? (
+        imageSrcs[itemId] ? (
+          <img className="itemCase" src={imageSrcs[itemId]} alt="Item" />
+        ) : (
+          <img className="itemCase" src={imageSrcs[1]} alt="Item" />
+        )
+      ) : (<></>
+      )}
     </div>
   );
 }

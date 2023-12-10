@@ -9,7 +9,12 @@ import spear from "../../assets/images/spear.png";
 
 export default function Wiki() {
     const [items, setItems] = useState([]);
+    const [currentList, setCurrentList] = useState([]);
     const [imageSrcs, setImageSrcs] = useState([]);
+    const [oneHandedButton, setOneHandedButton] = useState(true);
+    const [twoHandedButton, setTwoHandedButton] = useState(true);
+    const [spearButton, setSpearButton] = useState(true);
+    const [itemButton, setItemButton] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -39,34 +44,44 @@ export default function Wiki() {
       loadImages();
     }, [items]);
 
+    useEffect(() => {
+        let list = [];
+        items.forEach(item => {
+          const enableOneHand = item.category === "One-handed weapon" && oneHandedButton;
+          const enableTwoHand = item.category === "Two-handed weapon" && twoHandedButton;
+          const enableSpear = item.category === "Spear" && spearButton;
+          const enableItem = item.category === "item" && itemButton;
+    
+          if (enableOneHand || enableTwoHand || enableSpear || enableItem) {
+            list.push(item);
+          }
+        });
+        setCurrentList(list);
+    }, [oneHandedButton, twoHandedButton, spearButton, itemButton, items]);
+
     return <Grid container>
                 <Grid item xs={2}>
                     <List>
                         <ListItem>
-                        <ListItemButton className='category-button'>
+                        <ListItemButton onClick={() => (setOneHandedButton(!oneHandedButton))} className={oneHandedButton ? 'category-button': 'category-button-disable'}>
                             <ListItemText primary={'One-handed swords'} />
                             <img src={oneHand} class="typeWeaponIcon" />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
-                        <ListItemButton className='category-button'>
+                        <ListItemButton onClick={() => (setTwoHandedButton(!twoHandedButton))} className={twoHandedButton ? 'category-button': 'category-button-disable'}>
                             <ListItemText primary={'Two-handed swords'} />
                             <img src={twoHand} class="typeWeaponIcon" />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
-                        <ListItemButton className='category-button'>
+                        <ListItemButton onClick={() => (setSpearButton(!spearButton))} className={spearButton ? 'category-button': 'category-button-disable'}>
                             <ListItemText primary={'Spear'} />
                             <img src={spear} class="typeWeaponIcon" />
                         </ListItemButton>
                         </ListItem>
                         <ListItem>
-                        <ListItemButton className='category-button'>
-                            <ListItemText primary={'Bows'} />
-                        </ListItemButton>
-                        </ListItem>
-                        <ListItem>
-                        <ListItemButton className='category-button'>
+                        <ListItemButton onClick={() => (setItemButton(!itemButton))} className={itemButton ? 'category-button': 'category-button-disable'}>
                             <ListItemText primary={'Items'} />
                         </ListItemButton>
                         </ListItem>
@@ -80,7 +95,7 @@ export default function Wiki() {
                         flexWrap: 'wrap',
                     }}
                 >
-                    {items.map((item) => (
+                    {currentList.map((item) => (
                         <Box
                             sx={{
                                 width: 200,
